@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dupx77ga22s6h"]
+
+[ext_resource type="Script" path="res://narmleg.gd" id="1_22trx"]
+[ext_resource type="Texture2D" uid="uid://3hbd5h5m2nwd" path="res://icon.svg" id="1_o4w40"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmg4a"]
+height = 92.0
+
+[node name="legsegment" type="RigidBody2D"]
+input_pickable = true
+angular_damp = 100.0
+script = ExtResource("1_22trx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lmg4a")
+
+[node name="MeshInstance2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1.81899e-12, -5.96046e-08)
+scale = Vector2(0.162109, 0.726562)
+texture = ExtResource("1_o4w40")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
