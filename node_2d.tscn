@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://sd8wbrg3esqs"]
+[gd_scene load_steps=6 format=3 uid="uid://sd8wbrg3esqs"]
 
 [ext_resource type="PackedScene" uid="uid://bor5ajw3s0bxj" path="res://narm.tscn" id="1_xr4ip"]
+[ext_resource type="Script" path="res://hinge.gd" id="2_yf5nt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeygk"]
 size = Vector2(1246, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ms0"]
 size = Vector2(72, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dw5h"]
+size = Vector2(20, 13.0508)
 
 [node name="level" type="Node2D"]
 
@@ -82,3 +86,24 @@ color = Color(0.00119745, 0.00119745, 0.00119745, 1)
 position = Vector2(36, 73)
 scale = Vector2(1, 1.02871)
 shape = SubResource("RectangleShape2D_s7ms0")
+
+[node name="hinge" type="Area2D" parent="."]
+position = Vector2(400, 177)
+scale = Vector2(1.01043, 1.60909)
+collision_layer = 2
+script = ExtResource("2_yf5nt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hinge"]
+visibility_layer = 3
+position = Vector2(0, 0.310722)
+shape = SubResource("RectangleShape2D_0dw5h")
+
+[node name="ColorRect" type="ColorRect" parent="hinge"]
+offset_left = -9.89675
+offset_top = -6.21469
+offset_right = 30.1032
+offset_bottom = 33.7853
+scale = Vector2(0.49476, 0.313782)
+color = Color(1, 0, 0, 1)
+
+[connection signal="area_entered" from="hinge" to="hinge" method="_on_area_entered"]

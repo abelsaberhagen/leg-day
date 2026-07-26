@@ -23,3 +23,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouseEntered = false;
+
+
+func _on_body_entered(body: Node) -> void:
+	print("body entered");
+	if body.collision_layer == 2:
+		print("hinge detected"); # Replace with function body.
