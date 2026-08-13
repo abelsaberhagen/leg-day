@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dupx77ga22s6h"]
 
-[ext_resource type="Script" path="res://narmleg.gd" id="1_22trx"]
-[ext_resource type="Texture2D" uid="uid://3hbd5h5m2nwd" path="res://icon.svg" id="1_o4w40"]
+[ext_resource type="Script" path="res://scripts/narmleg.gd" id="1_22trx"]
+[ext_resource type="Texture2D" uid="uid://3hbd5h5m2nwd" path="res://assets/icon.svg" id="1_o4w40"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmg4a"]
 height = 92.0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://sd8wbrg3esqs"]
+[gd_scene load_steps=5 format=3 uid="uid://sd8wbrg3esqs"]
 
-[ext_resource type="PackedScene" uid="uid://bor5ajw3s0bxj" path="res://narm.tscn" id="1_xr4ip"]
-[ext_resource type="Script" path="res://hinge.gd" id="2_yf5nt"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_3pif4"]
+[ext_resource type="PackedScene" uid="uid://fxoic5u7ywpn" path="res://scenes/hinge.tscn" id="2_g4yos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeygk"]
 size = Vector2(1246, 40)
@@ -9,10 +9,8 @@ size = Vector2(1246, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ms0"]
 size = Vector2(72, 146)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dw5h"]
-size = Vector2(20, 13.0508)
-
 [node name="level" type="Node2D"]
+script = ExtResource("1_3pif4")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(536, 568)
@@ -28,9 +26,6 @@ offset_top = -20.0
 offset_right = 627.0
 offset_bottom = 30.0
 color = Color(0, 0, 0, 1)
-
-[node name="Narm" parent="." instance=ExtResource("1_xr4ip")]
-position = Vector2(820, 72)
 
 [node name="wall2" type="StaticBody2D" parent="."]
 position = Vector2(158, -1)
@@ -87,25 +82,11 @@ position = Vector2(36, 73)
 scale = Vector2(1, 1.02871)
 shape = SubResource("RectangleShape2D_s7ms0")
 
-[node name="hinge" type="StaticBody2D" parent="."]
-position = Vector2(400, 177)
-scale = Vector2(1.01043, 1.60909)
-collision_layer = 2
+[node name="hinge" parent="." instance=ExtResource("2_g4yos")]
 
-[node name="Area2D" type="Area2D" parent="hinge"]
-script = ExtResource("2_yf5nt")
+[node name="hinge3" parent="." instance=ExtResource("2_g4yos")]
+position = Vector2(1091, 497)
+scale = Vector2(1.02097, 2.58917)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hinge/Area2D"]
-visibility_layer = 3
-position = Vector2(0, 0.310722)
-shape = SubResource("RectangleShape2D_0dw5h")
-
-[node name="ColorRect" type="ColorRect" parent="hinge/Area2D"]
-offset_left = -9.89676
-offset_top = -6.21469
-offset_right = 30.1032
-offset_bottom = 33.7853
-scale = Vector2(0.49476, 0.313782)
-color = Color(1, 0, 0, 1)
-
-[connection signal="body_entered" from="hinge/Area2D" to="hinge/Area2D" method="_on_body_entered"]
+[node name="hinge2" parent="." instance=ExtResource("2_g4yos")]
+position = Vector2(26, 310)

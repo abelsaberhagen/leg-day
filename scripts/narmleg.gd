@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@onready var face : Sprite2D = $"../narmbody/face"
+
 var mouseEntered;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,14 +17,17 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			global_position = get_global_mouse_position();
 			linear_velocity = Vector2.ZERO;
 	
+	
 
 
 func _on_mouse_entered() -> void:
 	mouseEntered = true;
+	face.change_face("curious");
 	
 
 func _on_mouse_exited() -> void:
 	mouseEntered = false;
+	face.change_face("smile");
 
 
 func _on_body_entered(body: Node) -> void:

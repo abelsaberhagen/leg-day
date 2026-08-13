@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c37q4ff7wc7ij"
-path="res://.godot/imported/narmhead.png-1492c8fa0d951d5eca4d7e98aa4d2367.ctex"
+uid="uid://s61yyq112aas"
+path="res://.godot/imported/curious.png-4f7778a1648dc93007ed73b6fe0ce562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://narmhead.png"
-dest_files=["res://.godot/imported/narmhead.png-1492c8fa0d951d5eca4d7e98aa4d2367.ctex"]
+source_file="res://assets/curious.png"
+dest_files=["res://.godot/imported/curious.png-4f7778a1648dc93007ed73b6fe0ce562.ctex"]
 
 [params]
 
