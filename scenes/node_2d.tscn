@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://sd8wbrg3esqs"]
+[gd_scene load_steps=5 format=3 uid="uid://sd8wbrg3esqs"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_3pif4"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_3pif4"]
 [ext_resource type="PackedScene" uid="uid://fxoic5u7ywpn" path="res://scenes/hinge.tscn" id="2_g4yos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeygk"]
 size = Vector2(1161.57, 49.6079)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8evxa"]
+size = Vector2(40, 40)
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_3pif4")
@@ -89,10 +92,10 @@ color = Color(0, 0, 0, 1)
 position = Vector2(438, 57)
 
 [node name="hinge5" parent="." instance=ExtResource("2_g4yos")]
-position = Vector2(1007, 117)
+position = Vector2(928, 117)
 
 [node name="hinge6" parent="." instance=ExtResource("2_g4yos")]
-position = Vector2(153, 117)
+position = Vector2(241, 117)
 
 [node name="hinge4" parent="." instance=ExtResource("2_g4yos")]
 position = Vector2(702, -22)
@@ -103,3 +106,19 @@ scale = Vector2(1.02097, 2.58917)
 
 [node name="hinge2" parent="." instance=ExtResource("2_g4yos")]
 position = Vector2(136, 311)
+
+[node name="lava" type="Area2D" parent="."]
+position = Vector2(1407, 236)
+scale = Vector2(13.7217, 2.97001)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lava"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_8evxa")
+
+[node name="ColorRect" type="ColorRect" parent="lava"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="lava" to="." method="_on_lava_body_entered"]

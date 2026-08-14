@@ -14,8 +14,12 @@ func _process(delta: float) -> void:
 	var feetDistance = foot1.global_position.distance_to(foot2.global_position)
 	if feetDistance > 1000:
 		Global.narmDead = true
-		for child in get_children():
-			if child is PinJoint2D:
-				child.queue_free();
+	if Global.narmDead:
+		narmDie()
+
+func narmDie() -> void:
+	for child in get_children():
+		if child is PinJoint2D:
+			child.queue_free();
 				
 	

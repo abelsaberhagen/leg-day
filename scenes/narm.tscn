@@ -58,6 +58,12 @@ position = Vector2(384, -3.99991)
 rotation = -3.10472
 node_a = NodePath("../legsegment6")
 
+[node name="ColorRect" type="ColorRect" parent="PinJointFeet2"]
+offset_left = -18.725
+offset_top = -19.3228
+offset_right = 21.275
+offset_bottom = 20.6772
+
 [node name="PinJoint2D5" type="PinJoint2D" parent="."]
 position = Vector2(-19, 0)
 node_a = NodePath("../narmbody")
@@ -102,14 +108,22 @@ position = Vector2(-379, 9)
 rotation = 1.54098
 node_a = NodePath("../legsegment8")
 
+[node name="ColorRect" type="ColorRect" parent="PinJointFeet1"]
+offset_left = -19.4247
+offset_top = -19.5878
+offset_right = 20.5753
+offset_bottom = 20.4122
+
 [node name="narmbody" type="RigidBody2D" parent="."]
 position = Vector2(0, -20)
 scale = Vector2(1.44, 1.4)
+collision_layer = 4
 input_pickable = true
 can_sleep = false
 freeze_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="narmbody"]
+modulate = Color(1, 1, 0, 1)
 position = Vector2(0, -5.72205e-06)
 rotation = 0.00583007
 scale = Vector2(0.261719, 0.265625)

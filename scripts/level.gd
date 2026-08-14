@@ -13,7 +13,13 @@ func _process(delta: float) -> void:
 			if child.name == "Narm":
 				child.queue_free()
 				narmRevive()
-				
+	
+
 func narmRevive() -> void:
+	Global.narmDead = false
 	var narmInstance = narmScene.instantiate()
 	add_child(narmInstance)
+
+
+func _on_lava_body_entered(body: Node2D) -> void:
+	Global.narmDead = true
