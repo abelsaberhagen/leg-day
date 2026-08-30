@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://k11rt806ythl"]
+
+[ext_resource type="Texture2D" uid="uid://bu05il5fm0oo2" path="res://assets/potato.png" id="1_6tfnh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_voikq"]
+radius = 77.1622
+
+[node name="potato" type="RigidBody2D"]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_voikq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6tfnh")

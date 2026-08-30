@@ -10,12 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("revive"):
 		for child in get_children():
-			if child.name == "Narm":
+			if child.name.begins_with("Narm"):
 				child.queue_free()
 				narmRevive()
 	
 
 func narmRevive() -> void:
+	print("revive")
 	Global.narmDead = false
 	var narmInstance = narmScene.instantiate()
 	add_child(narmInstance)
