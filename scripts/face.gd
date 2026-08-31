@@ -1,7 +1,7 @@
 extends Sprite2D
 
-@onready var eyesOpenTimer : Timer = $"../eyesOpened"
-@onready var eyesClosedTimer : Timer = $"../eyesClosed"
+@onready var eyesOpenTimer : Timer = $eyesOpened
+@onready var eyesClosedTimer : Timer = $eyesClosed
 
 @onready var foot1 : RigidBody2D = $"../../legsegment6"
 @onready var foot2 : RigidBody2D = $"../../legsegment8"
@@ -25,14 +25,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var feetDistance = foot1.global_position.distance_to(foot2.global_position)
+	if get_parent().name== "narmbody":
+		var feetDistance = foot1.global_position.distance_to(foot2.global_position)
 	
-	if Global.narmDead:
-		change_face("dead")
-	elif feetDistance > 850.0:
-		change_face("distraught")
-	elif feetDistance > 750.0:
-		change_face("worried")
+		if Global.narmDead:
+			change_face("dead")
+		elif feetDistance > 850.0:
+			change_face("distraught")
+		elif feetDistance > 750.0:
+			change_face("worried")
+
+		
 
 	
 		
@@ -81,6 +84,8 @@ func _on_eyes_closed_timeout() -> void:
 		eyesOpenTimer.wait_time = randf_range(5.0, 10.0)
 		
 	eyesOpenTimer.start()
+	
+
 
 	
 func _on_eyes_opened_timeout() -> void:

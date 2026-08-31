@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc4o1ir672qrc"]
-
-[ext_resource type="Script" path="res://scripts/face.gd" id="1_l1hn5"]
-
-[node name="face" type="Sprite2D"]
-scale = Vector2(0.29486, 0.285714)
-script = ExtResource("1_l1hn5")
