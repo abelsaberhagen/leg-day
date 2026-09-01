@@ -60,6 +60,7 @@ rotation = -3.10472
 node_a = NodePath("../legsegment6")
 
 [node name="ColorRect" type="ColorRect" parent="PinJointFeet2"]
+visible = false
 offset_left = -18.725
 offset_top = -19.3228
 offset_right = 21.275
@@ -111,6 +112,7 @@ rotation = 1.54098
 node_a = NodePath("../legsegment8")
 
 [node name="ColorRect" type="ColorRect" parent="PinJointFeet1"]
+visible = false
 offset_left = -19.4247
 offset_top = -19.5878
 offset_right = 20.5753

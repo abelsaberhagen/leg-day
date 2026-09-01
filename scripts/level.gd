@@ -22,5 +22,6 @@ func narmRevive() -> void:
 	add_child(narmInstance)
 
 
-func _on_lava_body_entered(body: Node2D) -> void:
+func _on_saw_body_entered(body: Node2D) -> void:
 	Global.narmDead = true
+	print("helpf")
